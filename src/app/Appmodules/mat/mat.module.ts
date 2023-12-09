@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -30,7 +32,9 @@ const material = [
   MatCardModule,
   MatMenuModule,
   MatExpansionModule,
-  MatBadgeModule
+  MatBadgeModule,
+
+  ToastrModule.forRoot(),
 
 
 ]

@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatModule } from './Appmodules/mat/mat.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -11,7 +10,6 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -29,16 +27,18 @@ import { MatButtonModule } from '@angular/material/button';
     PagenotfoundComponent,
     HeaderComponent,
     FooterComponent,
-   
+
 
 
   ],
   imports: [
     BrowserModule,
+
+    BrowserAnimationsModule,
     AppRoutingModule,
 
     MatDialogModule,
-    BrowserAnimationsModule,
+
     MatModule,
     NgbModule,
     FontAwesomeModule,
