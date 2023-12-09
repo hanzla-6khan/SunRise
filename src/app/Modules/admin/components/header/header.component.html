@@ -1,0 +1,58 @@
+
+<nav class="header-nav">
+  <mat-list class="d-flex align-items-center pl-5">
+
+    <mat-list-item class="nav-item d-block d-lg-none">
+      <button mat-icon-button class="nav-link nav-icon search-bar-toggle">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-list-item>
+
+    <mat-list-item class="nav-item" [matMenuTriggerFor]="notificationsMenu">
+      <button mat-icon-button class="nav-link nav-icon">
+        <mat-icon>notifications</mat-icon>
+        <mat-badge matBadgeColor="primary" matBadge="4"></mat-badge>
+      </button>
+    </mat-list-item>
+
+    <mat-list-item class="nav-item" [matMenuTriggerFor]="messagesMenu">
+      <button mat-icon-button class="nav-link nav-icon">
+        <mat-icon>chat_left_text</mat-icon>
+
+      </button>
+    </mat-list-item>
+
+    <mat-list-item class="nav-item pe-3" [matMenuTriggerFor]="profileMenu">
+      <button mat-icon-button class="nav-link nav-profile d-flex align-items-center pe-0">
+        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+      </button>
+    </mat-list-item>
+
+    <mat-list-item>
+
+      <button mat-raised-button (click)="logout()">logout</button>
+    </mat-list-item>
+  </mat-list>
+
+  <!-- Notification Menu -->
+  <mat-menu #notificationsMenu="matMenu">
+    <div class="notifications">
+
+    </div>
+  </mat-menu>
+
+  <!-- Messages Menu -->
+  <mat-menu #messagesMenu="matMenu">
+    <div class="messages">
+
+    </div>
+  </mat-menu>
+
+  <!-- Profile Menu -->
+  <mat-menu #profileMenu="matMenu">
+    <div class="profile">
+  
+    </div>
+  </mat-menu>
+</nav>
