@@ -16,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 
 import { MatExpansionModule } from '@angular/material/expansion';
+import { timeout } from 'rxjs';
 
 
 
@@ -34,7 +35,12 @@ const material = [
   MatExpansionModule,
   MatBadgeModule,
 
-  ToastrModule.forRoot(),
+  ToastrModule.forRoot({
+    timeOut: 1000,
+    progressAnimation: 'increasing',
+    progressBar: true,
+    preventDuplicates:true
+  })
 
 
 ]

@@ -1,8 +1,9 @@
 
-<nav class="header-nav">
-  <mat-list class="d-flex align-items-center pl-5">
 
-    <mat-list-item class="nav-item d-block d-lg-none">
+<nav class="header-nav d-flex justify-content-end">
+  <mat-list class="d-flex align-items-end">
+
+    <mat-list-item class="">
       <button mat-icon-button class="nav-link nav-icon search-bar-toggle">
         <mat-icon>search</mat-icon>
       </button>
@@ -24,35 +25,89 @@
 
     <mat-list-item class="nav-item pe-3" [matMenuTriggerFor]="profileMenu">
       <button mat-icon-button class="nav-link nav-profile d-flex align-items-center pe-0">
-        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+        <img src="assets/img/loginImage.jpg" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2"></span>
       </button>
     </mat-list-item>
 
     <mat-list-item>
 
-      <button mat-raised-button (click)="logout()">logout</button>
+      <!-- <button mat-raised-button (click)="logout()"></button> -->
+      <a mat-button (click)="logout()" color="primary">logout</a>
     </mat-list-item>
   </mat-list>
 
-  <!-- Notification Menu -->
-  <mat-menu #notificationsMenu="matMenu">
-    <div class="notifications">
 
+
+  <!-- Notification Menu -->
+<!-- Your Angular component template file (e.g., notifications.component.html) -->
+
+<mat-menu #notificationsMenu="matMenu" class="notifications">
+  <div class="notification-header">
+    <span>You have 4 new notifications</span>
+    <a mat-menu-item routerLink="#">
+      <span class="badge rounded-pill bg-primary p-2 ms-2">View all</span>
+    </a>
+  </div>
+  <mat-divider></mat-divider>
+
+  <a mat-menu-item class="notification-item">
+    <mat-icon>warning</mat-icon>
+    <div>
+      <h4>name</h4>
+      <p>fdgssfdgdfgfsgdf</p>
+      <p>30 min. ago</p>
     </div>
-  </mat-menu>
+  </a>
+
+  <mat-divider></mat-divider>
+  
+
+  <mat-divider></mat-divider>
+
+
+  <a mat-menu-item class="dropdown-footer">
+    <span>Show all notifications</span>
+  </a>
+</mat-menu>
 
   <!-- Messages Menu -->
-  <mat-menu #messagesMenu="matMenu">
-    <div class="messages">
+<!-- Your component template file (e.g., header.component.html) -->
 
-    </div>
-  </mat-menu>
+<mat-menu #messagesMenu="matMenu" class="custom-menu">
+  <div class="messages">
+ <mat-icon>account_box</mat-icon>
+  <a routerLink="" class="text-center style-none pl-5 link-style">Home</a>
+  </div>
+</mat-menu>
 
   <!-- Profile Menu -->
   <mat-menu #profileMenu="matMenu">
-    <div class="profile">
-  
+    <div class="container pt-5">
+      <h5 class="text-center">User NAme</h5>
     </div>
+      <div class="messages">
+<button mat-menu-item class="d-flex">
+  <mat-icon>home</mat-icon>
+  <a routerLink="" class="text-center style-none pl-5 link-style">Home</a>
+</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item class="d-flex">
+  <mat-icon>account_box</mat-icon>
+  <a routerLink="" class="text-center style-none pl-5 link-style">user</a>
+</button>
+    <mat-divider></mat-divider>
+ <button mat-menu-item class="d-flex">
+  <mat-icon>settings</mat-icon>
+  <a routerLink="" class="text-center style-none pl-5 link-style">setting</a>
+</button>
+    <mat-divider></mat-divider>
+
+
+  </div>
+
   </mat-menu>
+
 </nav>
+
+

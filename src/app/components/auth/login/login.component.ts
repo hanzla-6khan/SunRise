@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent  {
   faLock = faLock;
   myForm: FormGroup | any;
 
-  constructor(private fb: FormBuilder ,private auth:AuthService,private router:Router) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -34,11 +35,13 @@ export class LoginComponent  {
     if (this.myForm.valid) {
       this.auth.login(this.myForm.value).subscribe(
         (result) => {
-          console.log(result);
+          this.toastr.success('login successfully !', 'Success');
+
           this.router.navigate(['./admin']);
+        this.myForm.close()
         },
         (err: Error) => {
-          alert(err.message);
+          this.toastr.error('invalid credentials !', 'failed');
         }
       );
     } else {

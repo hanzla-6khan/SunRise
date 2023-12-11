@@ -10,7 +10,7 @@
       <a mat-list-item routerLink="home">home</a>
 
       <a mat-list-item routerLink="settings">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <!-- <a mat-list-item href="#">Link 3</a> -->
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -37,6 +37,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="success">
+
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -45,10 +46,17 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <!-- <span>StayWander</span> -->
-<app-header></app-header>
+   <div class="container flex-end ">
+ <app-header></app-header>
+   </div>
+
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+<div class="container-fluid pt-3">
+  <router-outlet></router-outlet>
+</div>
+
   </mat-sidenav-content>
+
 </mat-sidenav-container>
+
