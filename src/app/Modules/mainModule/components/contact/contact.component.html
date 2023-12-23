@@ -1,35 +1,68 @@
-<form class="form">
+<div class="Card">
+  <div class="container">
+    <div class="row">
 
-    <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>first name</span>
-        </label>
 
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>last name</span>
-        </label>
+          <div class="text-center">
+       
+          </div>
+          <div class="text-center">
+            <h2>Welcome</h2>
+          </div>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                [formControl]="emailFormControl"
+                placeholder="Ex. pat@example.com"
+              />
+              <mat-error
+                *ngIf="
+                  emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                [formControl]="passwordFormControl"
+                placeholder="Enter your password"
+              />
+              <mat-error
+                *ngIf="
+                  passwordFormControl.hasError('password') &&
+                  !passwordFormControl.hasError('required')
+                "
+              >
+                Please enter a valid password
+              </mat-error>
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+               <div class="text-center">
+
+                    <button class="btn btn-lg text-center"  type="submit" mat-raised-button>submit</button>
+        </div>
+
+
+          </form>
+
+        <div class="card-footer text-center pt-5">
+          <small class="text-center"><a routerLink="../forgot-password">Forgot Password</a></small>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <label>
-        <input required="" placeholder="" type="email" class="input">
-        <span>email</span>
-    </label>
-
-    <label>
-        <input required="" type="tel" placeholder="" class="input">
-        <span>contact number</span>
-    </label>
-    <label>
-        <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-        <span>message</span>
-    </label>
-
-    <button class="fancy" href="#">
-      <span class="top-key"></span>
-      <span class="text">submit</span>
-      <span class="bottom-key-1"></span>
-      <span class="bottom-key-2"></span>
-    </button>
-</form>
