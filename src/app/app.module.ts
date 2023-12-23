@@ -18,6 +18,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ButtonModule } from 'primeng/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 
 @NgModule({
@@ -34,11 +36,12 @@ import { ButtonModule } from 'primeng/button';
   ],
   imports: [
     BrowserModule,
-
+    MatSidenavModule,
     BrowserAnimationsModule,
     AppRoutingModule,
 
     MatDialogModule,
+
 
     MatModule,
     NgbModule,

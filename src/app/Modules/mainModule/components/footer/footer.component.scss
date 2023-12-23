@@ -1,0 +1,39 @@
+   #scrollToTopBtn {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     display: none;
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     border-radius: 50%;
+     width: 50px;
+     height: 50px;
+     font-size: 20px;
+     cursor: pointer;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     transition: background-color 0.3s ease-in-out;
+   }
+
+   #scrollToTopBtn:hover {
+     background-color: #0056b3;
+   }
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#scrollToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}

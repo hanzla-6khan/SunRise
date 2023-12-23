@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Observable, map, shareReplay } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,9 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent {
   title = 'StayWander';
-  constructor(private toastr: ToastrService) { }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
+  constructor(private breakpointObserver: BreakpointObserver) { }
+
+
+  isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset);
+
+
 }
