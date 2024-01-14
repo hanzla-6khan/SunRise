@@ -4,10 +4,11 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminpannelComponent } from './components/adminpannel/adminpannel.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [{
   path: '', component: AdminpannelComponent, children: [
-    { path: 'home', component: HomeComponent },
+    { path: 'home', canActivate:[AuthGuard], component: HomeComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'header', component: HeaderComponent },
 

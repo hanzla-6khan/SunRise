@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CustomdDirective } from './Deractives/customd.directive';
 import { ScrollTopDirective } from './Deractives/scroll-top.directive';
 import { ContactComponent } from './components/contact/contact.component';
+import { GonextDirective } from './Deractives/gonext.directive';
 
 
 
@@ -26,7 +27,8 @@ import { ContactComponent } from './components/contact/contact.component';
     FooterComponent,
     CustomdDirective,
     ScrollTopDirective,
-    ContactComponent
+    ContactComponent,
+    GonextDirective
   ],
   imports: [
     CommonModule,

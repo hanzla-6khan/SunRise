@@ -48,3 +48,6 @@ $theme : mat.define-light-theme((
              )
 ));
 @include mat.all-component-themes($theme)
+## template referecne variable 
+it provide the DOM element  reference
+through which we can get access of all its attributes and properties 
